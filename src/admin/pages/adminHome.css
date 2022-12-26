@@ -1,0 +1,934 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#icon {
+  font-size: 1.4rem;
+}
+
+button {
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+  border: 1px solid #8080FF;
+  border-radius: 0.3rem;
+  transition: all 350ms ease;
+  height: 2.9rem;
+  cursor: pointer;
+}
+button #icon {
+  margin-right: 0.4rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-btn {
+  height: 2.9rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.clear-btn:hover {
+  background-color: #8080FF;
+  color: white;
+}
+
+.unClear-btn {
+  background-color: #8080FF;
+  color: white;
+  border: 1px solid #8080FF;
+}
+.unClear-btn:hover {
+  background-color: transparent;
+  color: #262626;
+}
+
+small {
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+}
+
+h4 {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+}
+
+input {
+  height: 2.74rem;
+  width: 100%;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  padding: 0 0.4rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+input:focus {
+  outline-color: #8080FF;
+}
+
+.admin-home {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 16vw 84vw;
+}
+.admin-home aside {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 4rem calc(100vh - 4rem);
+}
+.admin-home aside .nav {
+  padding-left: 0.5rem;
+  height: 100%;
+  width: 100%;
+  background-color: #262626;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.admin-home aside .nav h2 {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+.admin-home aside .nav h2 #irg {
+  font-size: 1.6rem;
+  color: #8080FF;
+}
+.admin-home aside ul {
+  padding-left: 0.25rem;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+.admin-home aside ul li {
+  width: 100%;
+  height: auto;
+  min-height: 2.75rem;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 2.75rem auto;
+  position: relative;
+}
+.admin-home aside ul li:first-child {
+  margin-top: 0.5rem;
+}
+.admin-home aside ul li .top-list {
+  padding-left: 0.5rem;
+  height: 2.75rem;
+  width: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  gap: 1rem;
+  transition: all 350ms ease;
+}
+.admin-home aside ul li .top-list span {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.admin-home aside ul li .top-list:hover {
+  background-color: #404040;
+}
+.admin-home aside ul li .top-list:hover h4 {
+  color: white;
+}
+.admin-home aside ul li .top-list:hover span {
+  color: white;
+}
+.admin-home aside ul li .hover-list {
+  width: 17vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: chocolate;
+}
+.admin-home aside ul li .drop {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.admin-home aside ul li .drop .aside-drop {
+  margin-top: 0.5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.admin-home aside ul li .drop .aside-drop .aside-drop-list {
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0.5rem;
+  cursor: pointer;
+}
+.admin-home aside ul li .drop .aside-drop .aside-drop-list h4 {
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+}
+.admin-home aside ul li .drop .aside-drop .aside-drop-list #icon {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.admin-home aside ul li .drop .aside-drop .aside-drop-list:hover {
+  font-size: 0.9rem;
+  background-color: #404040;
+}
+.admin-home aside ul li .drop .aside-drop .aside-drop-list:hover h4,
+.admin-home aside ul li .drop .aside-drop .aside-drop-list:hover #icon {
+  color: white;
+}
+.admin-home aside ul .active-aside-link {
+  background-color: #262626;
+}
+.admin-home aside ul .active-aside-link h4 {
+  color: white;
+}
+.admin-home aside ul .active-aside-link span {
+  color: white;
+}
+.admin-home .main-body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 4rem calc(100vh - 4rem);
+}
+.admin-home .main-body nav {
+  padding-right: 0.5rem;
+  height: 4rem;
+  width: 100%;
+  background-color: black;
+  background-color: #262626;
+  display: grid;
+  grid-template-columns: 12rem calc(100% - 12rem);
+}
+.admin-home .main-body nav .left {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+}
+.admin-home .main-body nav .left #icon {
+  font-size: 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.admin-home .main-body nav .left .location {
+  z-index: 15;
+  height: 2.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+.admin-home .main-body nav .left .location:hover {
+  color: white;
+}
+.admin-home .main-body nav .left .location .biz-location {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 3.25rem;
+  border: 1px solid #262626;
+}
+.admin-home .main-body nav .left .location .biz-location li {
+  height: 2.5rem;
+  width: 100%;
+}
+.admin-home .main-body nav .left .location .biz-location li input {
+  display: none;
+}
+.admin-home .main-body nav .left .location .biz-location li label {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  padding-left: 0.75rem;
+  border-bottom: 1px solid #A6A6A6;
+  font-weight: 400;
+}
+.admin-home .main-body nav .left .location .biz-location li label:last-child {
+  border: none;
+}
+.admin-home .main-body nav .left .location .biz-location li label:hover {
+  background-color: #262626;
+  color: white;
+}
+.admin-home .main-body nav .right {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.admin-home .main-body nav .right .right-cont {
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 3rem;
+}
+.admin-home .main-body nav .right .right-cont .other-link {
+  height: 100%;
+  width: 35rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, auto);
+}
+.admin-home .main-body nav .right .right-cont .other-link button {
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  gap: 0.5rem;
+}
+.admin-home .main-body nav .right .right-cont .other-link button span {
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.admin-home .main-body nav .right .right-cont .other-link button:hover {
+  background-color: #8080FF;
+  color: white;
+}
+.admin-home .main-body nav .right .right-cont .date {
+  width: 9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.admin-home .main-body nav .right .right-cont .date .date-info {
+  height: 2.75rem;
+  width: 100%;
+  background-color: transparent;
+  padding: 0 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  transition: all 350ms ease;
+}
+.admin-home .main-body nav .right .right-cont .date .date-info h4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+}
+.admin-home .main-body nav .right .right-cont .date .date-info #icon {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.2rem;
+  color: white;
+}
+.admin-home .main-body nav .right .right-cont .lighting {
+  height: 100%;
+  width: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.admin-home .main-body nav .right .right-cont .lighting #light-icon {
+  height: 1.5rem;
+  width: 1.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  font-size: 1.3rem;
+}
+.admin-home .main-body nav .right .right-cont .lighting #dark-icon {
+  height: 1.5rem;
+  width: 1.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+.admin-home .main-body nav .right .right-cont .lighting .light-mode {
+  background-color: black;
+  color: #8080FF;
+}
+.admin-home .main-body nav .right .right-cont .lighting .dark-mode {
+  color: black;
+  background-color: white;
+}
+.admin-home .main-body nav .right .right-cont .admin {
+  margin: auto 0;
+  height: 2.75rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+.admin-home .main-body nav .right .right-cont .admin h4 {
+  color: white;
+}
+.admin-home .main-body nav .right .right-cont .admin small {
+  color: #8080FF;
+}
+.admin-home .main-body header {
+  height: calc(100vh - 4rem);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+.admin-home .main-body header .main-header {
+  height: 100%;
+  width: 67.5%;
+  overflow-y: auto;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+.admin-home .main-body header .main-header .head {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+}
+.admin-home .main-body header .main-header .head .top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  margin-top: 1rem;
+  height: 100%;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.admin-home .main-body header .main-header .head .top .welcome {
+  height: 100%;
+  width: 100%;
+  height: 3rem;
+}
+.admin-home .main-body header .main-header .head .top .welcome h2 {
+  padding-left: 0.75rem;
+  color: white;
+  font-size: 1.75rem;
+  font-family: "Montserrat", sans-serif;
+}
+.admin-home .main-body header .main-header .head .top .filtering {
+  padding-right: 0.75rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0.75rem;
+  place-items: center;
+}
+.admin-home .main-body header .main-header .head .top .filtering ul {
+  position: absolute;
+  top: 2.73rem;
+  left: -0.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.admin-home .main-body header .main-header .head .top .filtering ul li {
+  border-right: 1px solid #262626;
+  border-left: 1px solid #262626;
+  height: 2.7rem;
+  width: 13rem;
+  background-color: white;
+  padding: 0 0.5rem;
+  border-bottom: 1px solid gray;
+  transition: all 350ms ease;
+}
+.admin-home .main-body header .main-header .head .top .filtering ul li:first-child {
+  border-top: 1px solid #262626;
+}
+.admin-home .main-body header .main-header .head .top .filtering ul li:hover {
+  background-color: #262626;
+  color: white;
+}
+.admin-home .main-body header .main-header .head .top .filtering .shops {
+  height: 2.75rem;
+  width: 13rem;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid black;
+  position: relative;
+}
+.admin-home .main-body header .main-header .head .top .filtering .shops h4 {
+  color: white;
+}
+.admin-home .main-body header .main-header .head .top .filtering .shops span {
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.admin-home .main-body header .main-header .head .top .filtering .filter-date {
+  height: 2.75rem;
+  width: 13rem;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.admin-home .main-body header .main-header .head .top .filtering .filter-date #filter-icon {
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.admin-home .main-body header .main-header .head .top .filtering .filter-date h4 {
+  color: white;
+}
+.admin-home .main-body header .main-header .head .top .filtering .filter-date #caret {
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.admin-home .main-body header .main-header .head .account {
+  height: auto;
+  width: 100%;
+  min-height: 25vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  place-items: center;
+  gap: 1rem;
+}
+.admin-home .main-body header .main-header .head .account .card {
+  border-radius: 0.35rem;
+  background: #ffffff;
+  border: 1px solid #262626;
+  height: 5rem;
+  width: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.admin-home .main-body header .main-header .head .account .card #big-icon {
+  height: 100%;
+  width: 4rem;
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.admin-home .main-body header .main-header .head .account .card #big-icon span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  padding: 0.5rem;
+}
+.admin-home .main-body header .main-header .head .account .card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+}
+.admin-home .main-body header .main-header .head .account .card .info h3 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.admin-home .main-body header .main-header .head .account .card .info h3 span {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.admin-home .main-body header .main-header .recent-sale {
+  height: 35rem;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 3rem 32rem;
+  gap: 2rem;
+}
+.admin-home .main-body header .main-header .recent-sale .nav {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.admin-home .main-body header .main-header .recent-sale .nav h2 {
+  font-size: 1.75rem;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice {
+  height: 32rem;
+  width: 100%;
+  overflow-x: auto;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table {
+  height: auto;
+  width: 50rem;
+  table-layout: fixed;
+  border-collapse: separate;
+  background-color: #A6A6A6;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table thead {
+  height: 3rem;
+  width: 100%;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table thead tr {
+  background-color: white;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table thead tr th {
+  width: 6rem;
+  font-size: 1.1rem;
+  font-family: "Manrope", sans-serif;
+  color: #262626;
+  text-align: center;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table thead tr th:first-child {
+  width: 8rem;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table thead tr th:nth-child(4) {
+  width: 8rem;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr {
+  background-color: white;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td {
+  height: 2.5rem;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  text-align: center;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn {
+  padding: 0 0.75rem;
+  height: 2rem;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 0.5rem;
+  position: relative;
+  border-color: black;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn span {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn ul {
+  position: absolute;
+  top: 2rem;
+  left: -0.2rem;
+  z-index: 11;
+  border: 1px solid #A6A6A6;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn ul li {
+  background-color: white;
+  height: 2.5rem;
+  width: 10rem;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #A6A6A6;
+  border-left: none;
+  cursor: pointer;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn ul li:hover {
+  color: white;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn ul li:hover:first-child {
+  background-color: #F97325;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn ul li:hover:nth-child(4) {
+  background-color: #00CC00;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn ul li:hover:nth-child(2) {
+  background-color: #262626;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn ul li:hover:nth-child(3) {
+  background-color: #8080FF;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn ul li:hover:last-child {
+  background-color: #FF1A1A;
+}
+.admin-home .main-body header .main-header .recent-sale .invoice table tbody tr td .unClear-btn:hover {
+  background-color: #262626;
+  color: white;
+}
+.admin-home .main-body header .right-header {
+  height: 100%;
+  width: 32.5%;
+  display: grid;
+  grid-template-rows: 35vh 45vh calc(100vh - 4rem - 81vh);
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+.admin-home .main-body header .right-header .update {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.admin-home .main-body header .right-header .update .cont {
+  border: 1px solid #262626;
+  border-radius: 0.35rem;
+  padding: 0.5rem;
+  padding-top: 0;
+  height: 99%;
+  width: 98%;
+  overflow-y: auto;
+}
+.admin-home .main-body header .right-header .update .cont .customer {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+  transition: all 350ms ease;
+}
+.admin-home .main-body header .right-header .update .cont .customer .img {
+  height: 3.5rem;
+  width: 3.5rem;
+  margin: auto 0;
+  border-radius: 100%;
+  padding: 1rem;
+  background-color: gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.admin-home .main-body header .right-header .update .cont .customer .img img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+}
+.admin-home .main-body header .right-header .update .cont .customer .right {
+  height: 3.5rem;
+  width: calc(100% - 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.admin-home .main-body header .right-header .update .cont .customer .right h4 {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+}
+.admin-home .main-body header .right-header .update .cont .customer .right h4 button {
+  height: 2rem;
+  font-size: 0.9rem;
+  padding: 0 0.75rem;
+}
+.admin-home .main-body header .right-header .update .cont .customer .right small {
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif;
+  color: #262626;
+  font-weight: 600;
+}
+.admin-home .main-body header .right-header .update .cont .customer:hover {
+  background-color: #404040;
+}
+.admin-home .main-body header .right-header .update .cont .customer:hover small,
+.admin-home .main-body header .right-header .update .cont .customer:hover h4 {
+  color: white;
+}
+.admin-home .main-body header .right-header .new-stock {
+  height: 46vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.admin-home .main-body header .right-header .new-stock .nav {
+  height: 15%;
+}
+.admin-home .main-body header .right-header .new-stock .cont {
+  height: 85%;
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+.admin-home .main-body header .right-header .new-stock .cont table {
+  table-layout: fixed;
+  border-collapse: separate;
+  background-color: #A6A6A6;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+.admin-home .main-body header .right-header .new-stock .cont table thead {
+  height: 3rem;
+}
+.admin-home .main-body header .right-header .new-stock .cont table thead tr {
+  background-color: white;
+}
+.admin-home .main-body header .right-header .new-stock .cont table thead tr th {
+  font-size: 1.1rem;
+  font-family: "Manrope", sans-serif;
+  color: #262626;
+}
+.admin-home .main-body header .right-header .new-stock .cont table thead tr th:first-child {
+  width: 4rem;
+}
+.admin-home .main-body header .right-header .new-stock .cont table thead tr th:nth-child(2) {
+  width: 9rem;
+}
+.admin-home .main-body header .right-header .new-stock .cont table thead tr th:nth-child(3) {
+  width: 5rem;
+}
+.admin-home .main-body header .right-header .new-stock .cont table thead tr th:nth-child(4) {
+  width: 5rem;
+}
+.admin-home .main-body header .right-header .new-stock .cont table tbody tr {
+  height: 2.5rem;
+  background-color: white;
+}
+.admin-home .main-body header .right-header .new-stock .cont table tbody tr td {
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+}
+.admin-home .main-body header .right-header .add-btn {
+  height: 100%;
+  width: 100%;
+}
+.admin-home .main-body header .right-header .add-btn .unClear-btn {
+  margin: 0 auto;
+  width: 98%;
+}/*# sourceMappingURL=adminHome.css.map */

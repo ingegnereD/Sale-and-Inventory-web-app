@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#icon {
+  font-size: 1.5rem;
+}
+
+button {
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+  border: 1px solid #8080FF;
+  border-radius: 0.3rem;
+  transition: all 500ms ease;
+  height: 2.9rem;
+  cursor: pointer;
+}
+button #icon {
+  margin-right: 0.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-btn {
+  height: 2.9rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.clear-btn:hover {
+  background-color: #8080FF;
+  color: white;
+}
+
+.unClear-btn {
+  background-color: #8080FF;
+  color: white;
+  border: 1px solid #8080FF;
+}
+.unClear-btn:hover {
+  background-color: transparent;
+  color: #262626;
+}
+
+small {
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+}
+
+h4 {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+}
+
+input {
+  height: 2.75rem;
+  width: 100%;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  padding: 0 0.5rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+input:focus {
+  outline-color: #8080FF;
+}/*# sourceMappingURL=standard.css.map */

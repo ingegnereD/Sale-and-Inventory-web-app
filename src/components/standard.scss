@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$bg-color: #FAF6FE;
+// $bg-color: #E5E5FF;
+$full-bg-color: #241445;
+$full-bg-color: $bg-color;
+$white-color: white;
+$text-color: #262626;
+$danger-color: #FF1A1A;
+$success-color: #00CC00;
+$warning-color:#F97325;
+$primary-color: #4D4DFF;
+$hover-color: #6666FF;
+$special-color:#3333FF;
+$hover-color: #8080FF;
+$table-border-color:#CCCCFF;
+$seconday-color: #A6A6A6;
+$font-mont: 'Montserrat',
+sans-serif;
+$font-manrope: 'Manrope',
+sans-serif;
+$font-pop: 'Poppins',
+sans-serif;
+$header-height: 5rem;
+$transition: all 500ms ease;
+html {
+    scroll-behavior: smooth;
+}
+
+@mixin area($height: 100%,
+$width: 100%) {
+    height: $height;
+    width: $width;
+}
+
+@mixin resGrid($var) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($var, 1fr));
+}
+
+@mixin flex($direction: row,
+$jContent: center,
+$aItems: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jContent;
+    align-items: $aItems;
+}
+
+@mixin autoCol($var) {
+    display: grid;
+    grid-template-columns: repeat($var, auto);
+}
+
+@mixin autoRow($var) {
+    display: grid;
+    grid-template-rows: repeat($var, auto);
+}
+
+@mixin font($size,
+$family,
+$color) {
+    font-size: $size;
+    font-family: $family;
+    color: $color;
+}
+
+#icon {
+    font-size: 1.5rem;
+}
+
+button {
+    @include font(1.1rem,
+    $font-mont,
+    $text-color);
+    font-weight: 500;
+    border: 1px solid $hover-color;
+    border-radius: .3rem;
+    // padding: .75rem 1.5rem;
+    transition: $transition;
+    height: 2.9rem;
+    cursor: pointer;
+    #icon {
+        margin-right: .5rem;
+        height: 100%;
+        @include flex(row,
+        center,
+        center);
+    }
+}
+
+.clear-btn {
+    height: 2.9rem;
+    background-color: transparent;
+    @include flex(row,
+    center,
+    center);
+    &:hover {
+        background-color: $hover-color;
+        color: $white-color
+    }
+}
+
+.unClear-btn {
+    background-color: $hover-color;
+    color: white;
+    border: 1px solid $hover-color;
+    &:hover {
+        background-color: transparent;
+        color: $text-color
+    }
+}
+
+small {
+    @include font(.9rem,
+    $font-mont,
+    $text-color);
+}
+
+h4 {
+    @include font(1rem,
+    $font-mont,
+    $text-color);
+    font-weight: 500;
+}
+
+input {
+    @include area(2.75rem,
+    100%);
+    @include font(1rem,
+    $font-mont,
+    $text-color);
+    padding: 0 .5rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: .2rem;
+    &:focus {
+        outline-color: $hover-color;
+    }
+}

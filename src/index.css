@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.danger-color {
+  background-color: #FF1A1A;
+}
+
+.warning-color {
+  background-color: #F97325;
+}
+
+.success-color {
+  background-color: #00CC00;
+}
+
+.primary-color {
+  background-color: #4D4DFF;
+}
+
+#icon {
+  font-size: 1.5rem;
+}
+
+button {
+  font-size: 1.1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+  border: 1px solid #262626;
+  border-radius: 0.3rem;
+  transition: all 500ms ease;
+  height: 2.9rem;
+  cursor: pointer;
+}
+button #icon {
+  margin-right: 0.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-btn {
+  height: 2.9rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.clear-btn:hover {
+  background-color: #8080FF;
+  color: white;
+}
+
+.unClear-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+.unClear-btn:hover {
+  background-color: transparent;
+  color: #262626;
+}
+
+small {
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+}
+
+h4 {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+}
+
+.table-holder {
+  height: 22.5rem;
+  width: 100%;
+  overflow-y: auto;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.table-holder table {
+  height: auto;
+  max-height: 22.5rem;
+  width: 100%;
+  background-color: #A6A6A6;
+  border-collapse: separate;
+  table-layout: fixed;
+}
+.table-holder table thead tr {
+  height: 3rem;
+  background-color: white;
+}
+.table-holder table thead tr th {
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  color: #262626;
+}
+.table-holder table tbody tr {
+  height: 2.5rem;
+}
+.table-holder table tbody tr td {
+  background-color: white;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  text-align: center;
+}
+.table-holder table tbody tr td:last-child button {
+  margin: 0 auto;
+  height: 2rem;
+  width: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.table-holder table tbody .active-table td {
+  background-color: whitesmoke;
+  font-weight: bold;
+}
+
+.inventory-table-holder {
+  height: 35.5rem;
+  width: 100%;
+}
+
+.form-group {
+  height: 4rem;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 0.5rem;
+  position: relative;
+}
+.form-group label {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 600;
+}
+.form-group input {
+  height: 2.75rem;
+  width: 100%;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  padding: 0 0.5rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+.form-group input:focus {
+  outline-color: #8080FF;
+}
+.form-group .filtered-stock {
+  z-index: 15;
+  position: absolute;
+  top: 4.7rem;
+  left: 0;
+  width: 100%;
+  color: white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.form-group .filtered-stock li {
+  padding: 0 0.5rem;
+  border: 1px solid #262626;
+  border-bottom: none;
+  height: 2.5rem;
+  width: 100%;
+  background-color: white;
+  color: #262626;
+  transition: all 500ms ease;
+  cursor: pointer;
+}
+.form-group .filtered-stock li:first-child {
+  margin: 0;
+}
+.form-group .filtered-stock li:last-child {
+  border-bottom: 1px solid #262626;
+}
+.form-group .filtered-stock li:hover {
+  color: white;
+  background-color: #262626;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: "Manrope", sans-serif;
+  color: #262626;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  color: #262626;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+}
+
+li {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .background {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.container .background .door {
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  position: absolute;
+  right: 0rem;
+  top: 10vh;
+  padding: 0.75rem;
+  height: auto;
+  width: 412px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+}
+.container .background .door .top {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+.container .background .door .top .option {
+  height: 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container .background .door .top .option .line {
+  width: 100%;
+  border-top: 1px solid #A6A6A6;
+}
+.container .background .door .top .option small {
+  position: absolute;
+  top: 0.5rem;
+  background-color: white;
+  padding: 0.2rem 0.5rem;
+}
+.container .background .door form.access {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1.5rem;
+}
+.container .background .door form.access .form-group {
+  height: 4rem;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 0.5rem;
+}
+.container .background .door form.access .form-group label {
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  color: #262626;
+  font-weight: 500;
+}
+.container .background .door form.access .form-link {
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .background .door form.access .form-link span:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,934 @@
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    $bg-color: #FAF6FE;
+    // $bg-color: #E5E5FF;
+    $full-bg-color: #241445;
+    $full-bg-color: $bg-color;
+    $white-color: white;
+    $text-color: #262626;
+    $dark-bg: #404040;
+    $danger-color: #FF1A1A;
+    $success-color: #00CC00;
+    $warning-color:#F97325;
+    $primary-color: #4D4DFF;
+    $hover-color: #6666FF;
+    $special-color:#3333FF;
+    $hover-color: #8080FF;
+    $table-border-color:#CCCCFF;
+    $seconday-color: #A6A6A6;
+    $font-mont: 'Montserrat',
+    sans-serif;
+    $font-manrope: 'Manrope',
+    sans-serif;
+    $font-pop: 'Poppins',
+    sans-serif;
+    $header-height: 4rem;
+    $transition: all 350ms ease;
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    @mixin area($height: 100%,
+    $width: 100%) {
+        height: $height;
+        width: $width;
+    }
+    
+    @mixin resGrid($var) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax($var, 1fr));
+    }
+    
+    @mixin flex($direction: row,
+    $jContent: center,
+    $aItems: center) {
+        display: flex;
+        flex-direction: $direction;
+        justify-content: $jContent;
+        align-items: $aItems;
+    }
+    
+    @mixin autoCol($var) {
+        display: grid;
+        grid-template-columns: repeat($var, auto);
+    }
+    
+    @mixin autoRow($var) {
+        display: grid;
+        grid-template-rows: repeat($var, auto);
+    }
+    
+    @mixin font($size,
+    $family,
+    $color) {
+        font-size: $size;
+        font-family: $family;
+        color: $color;
+    }
+    
+    #icon {
+        font-size: 1.4rem;
+    }
+    
+    button {
+        @include font(1.1rem,
+        $font-mont,
+        $text-color);
+        font-weight: 500;
+        border: 1px solid $hover-color;
+        border-radius: .3rem;
+        // padding: .74rem 1.4rem;
+        transition: $transition;
+        height: 2.9rem;
+        cursor: pointer;
+        #icon {
+            margin-right: .4rem;
+            height: 100%;
+            @include flex(row,
+            center,
+            center);
+        }
+    }
+    
+    .clear-btn {
+        height: 2.9rem;
+        background-color: transparent;
+        @include flex(row,
+        center,
+        center);
+        &:hover {
+            background-color: $hover-color;
+            color: $white-color
+        }
+    }
+    
+    .unClear-btn {
+        background-color: $hover-color;
+        color: white;
+        border: 1px solid $hover-color;
+        &:hover {
+            background-color: transparent;
+            color: $text-color
+        }
+    }
+    
+    small {
+        @include font(.9rem,
+        $font-mont,
+        $text-color);
+    }
+    
+    h4 {
+        @include font(1rem,
+        $font-mont,
+        $text-color);
+        font-weight: 500;
+    }
+    
+    input {
+        @include area(2.74rem,
+        100%);
+        @include font(1rem,
+        $font-mont,
+        $text-color);
+        padding: 0 .4rem;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: .2rem;
+        &:focus {
+            outline-color: $hover-color;
+        }
+    }
+    
+    .admin-home {
+        @include area(100vh,
+        100%);
+        display: grid;
+        grid-template-columns: 16vw 84vw;
+        // gap: .4rem;
+        aside {
+            @include area(100%,
+            100%);
+            display: grid;
+            grid-template-rows: 4rem calc(100vh - 4rem);
+            .nav {
+                padding-left: .5rem;
+                @include area;
+                background-color: $text-color;
+                @include flex(row,
+                flex-start,
+                center);
+                h2 {
+                    @include font(1.5rem,
+                    $font-mont,
+                    $white-color);
+                    #irg {
+                        font-size: 1.6rem;
+                        color: $hover-color;
+                    }
+                }
+            }
+            ul {
+                padding-left: .25rem;
+                overflow-y: auto;
+                overflow-x: auto;
+                li {
+                    width: 100%;
+                    height: auto;
+                    min-height: 2.75rem;
+                    background-color: white;
+                    display: grid;
+                    grid-template-rows: 2.75rem auto;
+                    // gap: .5rem;
+                    &:first-child {
+                        margin-top: .5rem;
+                    }
+                    .top-list {
+                        padding-left: .5rem;
+                        @include area(2.75rem,
+                        15rem);
+                        @include flex( row,
+                        flex-start,
+                        center);
+                        cursor: pointer;
+                        gap: 1rem;
+                        span {
+                            height: 100%;
+                            @include flex( row,
+                            flex-start,
+                            center);
+                            font-size: 1.3rem;
+                        }
+                        transition: $transition;
+                        &:hover {
+                            background-color: $dark-bg;
+                            h4 {
+                                color: $white-color;
+                            }
+                            span {
+                                color: $white-color;
+                            }
+                        }
+                    }
+                    position :relative;
+                    .hover-list {
+                        width: 17vw;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: chocolate;
+                    }
+                    .drop {
+                        @include area(fit-content,
+                        100%);
+                        @include flex(row,
+                        flex-end,
+                        flex-start);
+                        .aside-drop {
+                            margin-top: .5rem;
+                            @include area(fit-content,
+                            90%);
+                            @include flex(column,
+                            center,
+                            center);
+                            .aside-drop-list {
+                                @include area(2rem,
+                                100%);
+                                @include flex(row,
+                                flex-start,
+                                center);
+                                gap: .5rem;
+                                padding-left: .5rem;
+                                cursor: pointer;
+                                h4 {
+                                    @include font(.9rem,
+                                    $font-mont,
+                                    $text-color)
+                                }
+                                #icon {
+                                    height: 100%;
+                                    @include flex(row,
+                                    center,
+                                    center);
+                                    font-size: 1.3rem;
+                                }
+                                &:hover {
+                                    font-size: .9rem;
+                                    background-color: $dark-bg;
+                                    h4,
+                                    #icon {
+                                        color: $white-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .active-aside-link {
+                    background-color: $text-color;
+                    h4 {
+                        color: $white-color;
+                    }
+                    span {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+        .main-body {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: 4rem calc(100vh - 4rem);
+            // gap: .75rem;
+            nav {
+                padding-right: .5rem;
+                @include area(4rem,
+                100%);
+                background-color: black;
+                background-color: $text-color;
+                display: grid;
+                grid-template-columns: 12rem calc(100% - 12rem);
+                .left {
+                    @include area(100%,
+                    100%);
+                    @include flex(row,
+                    flex-start,
+                    center);
+                    color: $white-color;
+                    #icon {
+                        font-size: 1.75rem;
+                        height: 100%;
+                        @include flex(row,
+                        center,
+                        center);
+                        display: none;
+                    }
+                    .location {
+                        z-index: 15;
+                        height: 2.75rem;
+                        @include flex(row,
+                        center,
+                        center);
+                        gap: .75rem;
+                        &:hover {
+                            color: $white-color;
+                        }
+                        .biz-location {
+                            width: 100%;
+                            position: absolute;
+                            left: 0;
+                            top: 3.25rem;
+                            border: 1px solid $text-color;
+                            li {
+                                @include area(2.5rem,
+                                100%);
+                                input {
+                                    display: none;
+                                }
+                                label {
+                                    @include area;
+                                    @include flex(row,
+                                    flex-start,
+                                    center);
+                                    background-color: $white-color;
+                                    @include font(1rem,
+                                    $font-mont,
+                                    $text-color);
+                                    padding-left: .75rem;
+                                    border-bottom: 1px solid #A6A6A6;
+                                    font-weight: 400;
+                                    &:last-child {
+                                        border: none;
+                                    }
+                                    &:hover {
+                                        background-color: $text-color;
+                                        color: $white-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .right {
+                    @include area(4rem,
+                    100%);
+                    @include flex(row,
+                    flex-end,
+                    center);
+                    .right-cont {
+                        @include area(100%,
+                        fit-content);
+                        @include autoCol(4);
+                        gap: 3rem;
+                        .other-link {
+                            @include area(100%,
+                            35rem);
+                            display: grid;
+                            place-items: center;
+                            grid-template-columns: repeat(4, auto);
+                            button {
+                                width: 6rem;
+                                height: 2.5rem;
+                                font-size: 1rem;
+                                margin: 0;
+                                background-color: transparent;
+                                border: none;
+                                @include flex(row,
+                                center,
+                                center);
+                                border-radius: 0;
+                                gap: .5rem;
+                                span {
+                                    @include area(100%,
+                                    fit-content);
+                                    @include flex(row,
+                                    center,
+                                    center);
+                                    font-size: 1.5rem;
+                                }
+                                &:hover {
+                                    background-color: $hover-color;
+                                    color: white;
+                                }
+                            }
+                        }
+                        .date {
+                            width: 9rem;
+                            @include flex(row,
+                            center,
+                            center);
+                            .date-info {
+                                @include area(2.75rem,
+                                100%);
+                                background-color: transparent;
+                                padding: 0 .75rem;
+                                @include autoCol(2);
+                                h4 {
+                                    @include flex(row,
+                                    flex-start,
+                                    center);
+                                    color: $white-color;
+                                }
+                                #icon {
+                                    height: 100%;
+                                    @include flex(row,
+                                    flex-end,
+                                    center);
+                                    font-size: 1.2rem;
+                                    color: white;
+                                }
+                                transition: $transition;
+                            }
+                        }
+                        .lighting {
+                            @include area(100%,
+                            4rem);
+                            @include flex(row,
+                            center,
+                            center);
+                            #light-icon {
+                                @include area(1.5rem,
+                                1.75rem);
+                                @include flex(row,
+                                center,
+                                center);
+                                border-top-left-radius: .2rem;
+                                border-bottom-left-radius: .2rem;
+                                font-size: 1.3rem;
+                            }
+                            #dark-icon {
+                                @include area(1.5rem,
+                                1.75rem);
+                                @include flex(row,
+                                center,
+                                center);
+                                border-top-right-radius: .2rem;
+                                border-bottom-right-radius: .2rem;
+                            }
+                            .light-mode {
+                                background-color: black;
+                                color: $hover-color;
+                            }
+                            .dark-mode {
+                                color: black;
+                                background-color: white;
+                            }
+                            cursor: pointer;
+                        }
+                        .admin {
+                            margin: auto 0;
+                            @include area(2.75rem,
+                            fit-content);
+                            @include flex(column,
+                            flex-end,
+                            center);
+                            gap: .5rem;
+                            h4 {
+                                color: $white-color;
+                            }
+                            small {
+                                color: $hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+            // END OF NAVIGATION
+            header {
+                @include area(calc(100vh - 4rem),
+                100%);
+                @include flex(row,
+                center,
+                center);
+                gap: .75rem;
+                .main-header {
+                    @include area(100%,
+                    67.5%);
+                    overflow-y: auto;
+                    display: grid;
+                    grid-template-rows: auto;
+                    gap: 1rem;
+                    .head {
+                        // background-color: $dark-bg;
+                        @include area;
+                        display: grid;
+                        grid-template-rows: auto;
+                        gap: 1rem;
+                        padding-bottom: .75rem;
+                        .top {
+                            @include resGrid(14rem);
+                            margin-top: 1rem;
+                            @include area;
+                            height: 3rem;
+                            @include flex(row,
+                            flex-start,
+                            center);
+                            .welcome {
+                                @include area;
+                                height: 3rem;
+                                h2 {
+                                    padding-left: .75rem;
+                                    color: $white-color;
+                                    font-size: 1.75rem;
+                                    font-family: $font-mont;
+                                }
+                            }
+                            .filtering {
+                                padding-right: .75rem;
+                                @include area;
+                                @include autoCol(2);
+                                gap: .75rem;
+                                place-items: center;
+                                ul {
+                                    position: absolute;
+                                    top: 2.73rem;
+                                    left: -.1;
+                                    @include flex(column,
+                                    center,
+                                    center);
+                                    li {
+                                        border-right: 1px solid $text-color;
+                                        border-left: 1px solid $text-color;
+                                        @include area(2.7rem,
+                                        13rem);
+                                        background-color: $white-color;
+                                        padding: 0 .5rem;
+                                        border-bottom: 1px solid gray;
+                                        &:first-child {
+                                            border-top: 1px solid $text-color
+                                        }
+                                        transition: $transition;
+                                        &:hover {
+                                            background-color: $text-color;
+                                            color: $white-color;
+                                        }
+                                    }
+                                }
+                                .shops {
+                                    @include area(2.75rem,
+                                    13rem);
+                                    background-color: black;
+                                    @include flex(row,
+                                    center,
+                                    center);
+                                    gap: 1rem;
+                                    h4 {
+                                        color: $white-color;
+                                    }
+                                    span {
+                                        @include area(100%,
+                                        fit-content);
+                                        @include flex(row,
+                                        center,
+                                        center);
+                                        color: $white-color;
+                                    }
+                                    border: 1px solid black;
+                                    position: relative;
+                                }
+                                .filter-date {
+                                    @include area(2.75rem,
+                                    13rem);
+                                    background-color: black;
+                                    @include flex(row,
+                                    center,
+                                    center);
+                                    gap: 1rem;
+                                    #filter-icon {
+                                        @include area(100%,
+                                        fit-content);
+                                        @include flex(row,
+                                        center,
+                                        center);
+                                        color: $white-color;
+                                    }
+                                    h4 {
+                                        color: $white-color;
+                                    }
+                                    #caret {
+                                        @include area(100%,
+                                        fit-content);
+                                        @include flex(row,
+                                        center,
+                                        center);
+                                        color: $white-color;
+                                    }
+                                    position: relative;
+                                }
+                            }
+                        }
+                        .account {
+                            @include area(auto,
+                            100%);
+                            min-height: 25vh;
+                            @include resGrid(16rem);
+                            place-items: center;
+                            gap: 1rem;
+                            .card {
+                                border-radius: .35rem;
+                                background: #ffffff;
+                                // box-shadow: 5px 5px 7px #e0e0e0, -5px -5px 7px #ffffff;
+                                border: 1px solid $text-color;
+                                @include area(5rem,
+                                15rem);
+                                @include flex(row,
+                                flex-start center);
+                                gap: .5rem;
+                                #big-icon {
+                                    @include area(100%,
+                                    4rem);
+                                    font-size: 2.5rem;
+                                    @include flex(row,
+                                    center,
+                                    center);
+                                    color: $white-color;
+                                    span {
+                                        @include flex(row,
+                                        center,
+                                        center);
+                                        border-radius: 100%;
+                                        padding: .5rem;
+                                    }
+                                }
+                                .info {
+                                    @include flex(column,
+                                    flex-start,
+                                    center);
+                                    gap: .3rem;
+                                    h3 {
+                                        @include area(100%,
+                                        100%);
+                                        @include flex(row,
+                                        flex-start,
+                                        center);
+                                        span {
+                                            height: 100%;
+                                            @include flex(row,
+                                            center,
+                                            center);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        // End of Account
+                    }
+                    // Beginning of recent sales
+                    .recent-sale {
+                        @include area(35rem,
+                        100%);
+                        display: grid;
+                        grid-template-rows: 3rem 32rem;
+                        gap: 2rem;
+                        .nav {
+                            height: 100%;
+                            @include flex(row,
+                            flex-start,
+                            center);
+                            h2 {
+                                font-size: 1.75rem;
+                            }
+                        }
+                        .invoice {
+                            @include area(32rem,
+                            100%);
+                            overflow-x: auto;
+                            table {
+                                @include area(auto,
+                                50rem);
+                                table-layout: fixed;
+                                border-collapse: separate;
+                                background-color: #A6A6A6;
+                                thead {
+                                    height: 3rem;
+                                    width: 100%;
+                                    tr {
+                                        background-color: $white-color;
+                                        th {
+                                            width: 6rem;
+                                            @include font(1.1rem,
+                                            $font-manrope,
+                                            $text-color);
+                                            text-align: center;
+                                            &:first-child {
+                                                width: 8rem;
+                                            }
+                                            &:nth-child(4) {
+                                                width: 8rem;
+                                            }
+                                        }
+                                    }
+                                }
+                                tbody {
+                                    tr {
+                                        background-color: $white-color;
+                                        td {
+                                            height: 2.5rem;
+                                            @include font(1rem,
+                                            $font-mont,
+                                            $text-color);
+                                            text-align: center;
+                                            .unClear-btn {
+                                                padding: 0 .75rem;
+                                                height: 2rem;
+                                                background-color: black;
+                                                @include flex(row,
+                                                center,
+                                                center);
+                                                margin: 0 auto;
+                                                gap: .5rem;
+                                                span {
+                                                    height: 100%;
+                                                    @include flex(row,
+                                                    center,
+                                                    center);
+                                                }
+                                                position: relative;
+                                                ul {
+                                                    position: absolute;
+                                                    top: 2rem;
+                                                    left: -.2rem;
+                                                    z-index: 11;
+                                                    border: 1px solid #A6A6A6;
+                                                    li {
+                                                        background-color: $white-color;
+                                                        @include area(2.5rem,
+                                                        10rem);
+                                                        padding: 0 .5rem;
+                                                        @include flex(row,
+                                                        flex-start,
+                                                        center);
+                                                        border-bottom: 1px solid #A6A6A6;
+                                                        border-left: none;
+                                                        cursor: pointer;
+                                                        &:hover {
+                                                            color: $white-color;
+                                                            &:first-child {
+                                                                background-color: $warning-color;
+                                                            }
+                                                            &:nth-child(4) {
+                                                                background-color: $success-color;
+                                                            }
+                                                            &:nth-child(2) {
+                                                                background-color: $text-color;
+                                                            }
+                                                            &:nth-child(3) {
+                                                                background-color: $hover-color;
+                                                            }
+                                                            &:last-child {
+                                                                background-color: $danger-color;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                border-color: black;
+                                                &:hover {
+                                                    background-color: $text-color;
+                                                    color: $white-color;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // End of recent sales
+                }
+                .right-header {
+                    @include area(100%,
+                    32.5%);
+                    display: grid;
+                    grid-template-rows: 35vh 45vh calc(100vh - 4rem - 81vh);
+                    gap: 1rem;
+                    margin-top: .75rem;
+                    .update {
+                        @include area;
+                        @include flex(row,
+                        center,
+                        flex-end);
+                        .cont {
+                            border: 1px solid $text-color;
+                            border-radius: .35rem;
+                            padding: .5rem;
+                            padding-top: 0;
+                            @include area(99%,
+                            98%);
+                            overflow-y: auto;
+                            .customer {
+                                @include area(4rem,
+                                100%);
+                                @include flex(row,
+                                flex-start,
+                                center);
+                                gap: .5rem;
+                                background-color: $white-color;
+                                .img {
+                                    @include area(3.5rem,
+                                    3.5rem);
+                                    margin: auto 0;
+                                    border-radius: 100%;
+                                    padding: 1rem;
+                                    background-color: gray;
+                                    @include flex(row,
+                                    center,
+                                    center);
+                                    img {
+                                        @include area(3rem,
+                                        3rem);
+                                        border-radius: 100%;
+                                    }
+                                }
+                                .right {
+                                    @include area(3.5rem,
+                                    calc(100% - 3rem));
+                                    @include flex(column,
+                                    flex-start,
+                                    flex-start);
+                                    h4 {
+                                        @include font(1rem,
+                                        $font-mont,
+                                        $text-color);
+                                        button {
+                                            height: 2rem;
+                                            font-size: .9rem;
+                                            padding: 0 .75rem;
+                                        }
+                                    }
+                                    small {
+                                        @include font(1rem,
+                                        $font-manrope,
+                                        $text-color);
+                                        font-weight: 600;
+                                    }
+                                }
+                                cursor: pointer;
+                                transition: $transition;
+                                &:hover {
+                                    background-color: $dark-bg;
+                                    small,
+                                    h4 {
+                                        color: $white-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // End of update
+                    .new-stock {
+                        @include area(46vh,
+                        100%);
+                        @include flex(column,
+                        center,
+                        flex-start);
+                        .nav {
+                            height: 15%;
+                        }
+                        .cont {
+                            @include area(85%,
+                            98%);
+                            @include flex(row,
+                            center,
+                            flex-start);
+                            overflow-y: auto;
+                            table {
+                                table-layout: fixed;
+                                border-collapse: separate;
+                                background-color: #A6A6A6;
+                                @include area;
+                                overflow-y: auto;
+                                thead {
+                                    height: 3rem;
+                                    tr {
+                                        background-color: $white-color;
+                                        th {
+                                            @include font(1.1rem,
+                                            $font-manrope,
+                                            $text-color);
+                                            &:first-child {
+                                                width: 4rem;
+                                            }
+                                            &:nth-child(2) {
+                                                width: 9rem;
+                                            }
+                                            &:nth-child(3) {
+                                                width: 5rem;
+                                            }
+                                            &:nth-child(4) {
+                                                width: 5rem;
+                                            }
+                                        }
+                                    }
+                                }
+                                tbody {
+                                    tr {
+                                        height: 2.5rem;
+                                        background-color: $white-color;
+                                        td {
+                                            text-align: center;
+                                            @include font(1rem,
+                                            $font-mont,
+                                            $text-color)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //End of New Added Stock
+                    .add-btn {
+                        @include area;
+                        .unClear-btn {
+                            margin: 0 auto;
+                            width: 98%;
+                        }
+                    }
+                }
+            }
+        }
+    }

@@ -1,0 +1,269 @@
+@import '../../index.scss';
+head {
+    padding-left: .5rem;
+    display: grid;
+    grid-template-rows: auto;
+    gap: .5rem;
+    padding-right: .25rem;
+    background-color: whitesmoke;
+    display: none;
+    .top-header {
+        margin-top: .5rem;
+        // background-color: $dark-bg;
+        background: red;
+        // box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        min-height: 30vh;
+        display: grid;
+        grid-template-rows: auto;
+        border-radius: .3rem;
+        .upper {
+            height: auto;
+            min-height: 3.5rem;
+            @include flex(row, center, center);
+            .welcome-msg {
+                width: 40%;
+                h2 {
+                    font-size: 2rem;
+                    color: $white-color;
+                    font-family: $font-mont
+                }
+            }
+            .right {
+                width: 60%;
+                @include flex(row, flex-end, center);
+                gap: 3rem;
+                .filter {
+                    width: 40%;
+                    height: 2.75rem;
+                    @include flex(row, center, center);
+                    gap: 1rem;
+                    &:hover {
+                        background-color: black;
+                        color: $white-color;
+                    }
+                    position: relative;
+                    .option {
+                        background-color: $white-color;
+                        border: 1px solid black;
+                        height: auto;
+                        width: 100%;
+                        position: absolute;
+                        top: 2.8rem;
+                        left: 0;
+                        input {
+                            height: 2.5rem;
+                            border: none;
+                            outline: none;
+                            border-bottom: 1px solid #A6A6A6;
+                        }
+                        li {
+                            height: 2.5rem;
+                            width: 100%;
+                            background-color: $white-color;
+                            border-bottom: 1px solid #A6A6A6;
+                            padding: 0 .3rem;
+                            font-weight: 500;
+                            &:last-child {
+                                border-bottom: none;
+                                position: relative;
+                                .close-filter {
+                                    position: absolute;
+                                    left: .3rem;
+                                    top: .16rem;
+                                    height: 2.2rem;
+                                    @include flex(row, center, center);
+                                    padding: 0 .5rem;
+                                    #icon {
+                                        margin-right: 0;
+                                        font-size: 1.2rem;
+                                    }
+                                }
+                                button {
+                                    &:hover {
+                                        background-color: black;
+                                        color: $white-color;
+                                    }
+                                }
+                            }
+                            label {
+                                @include font(1rem, $font-mont, $text-color);
+                                font-weight: 500;
+                            }
+                            input {
+                                display: none;
+                            }
+                            &:hover {
+                                background-color: $dark-bg;
+                                color: $white-color;
+                                label {
+                                    color: $white-color;
+                                }
+                            }
+                        }
+                        .apply-li {
+                            @include flex(row, flex-end, center);
+                            .apply {
+                                @include area(2.2rem, 6rem);
+                            }
+                            &:hover {
+                                background-color: $white-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        padding: 0 .5rem;
+        .middle {
+            min-height: 3rem;
+            @include resGrid(18rem);
+            gap: 1rem;
+            button {
+                height: 2.75rem;
+                @include flex(row, center, center);
+                gap: .5rem;
+                #icon {
+                    height: 100%;
+                    @include flex(row, center, center);
+                }
+            }
+        }
+        .lower {
+            height: auto;
+            @include resGrid(16rem);
+            place-items: center;
+            gap: 2rem;
+            .card {
+                padding: .5rem;
+                @include area(5rem, 100%);
+                border-radius: .35rem;
+                border: none;
+                background: #ffffff;
+                // box-shadow: 5px 5px 7px #e0e0e0, -5px -5px 7px #ffffff;
+                border: 1px solid $text-color;
+                @include flex(row, flex-start, center);
+                gap: .5rem;
+                #big-icon {
+                    @include area(100%, 4rem);
+                    font-size: 2.65rem;
+                    @include flex(row, flex-start, center);
+                    color: $white-color;
+                    span {
+                        @include flex(row, center, center);
+                        border-radius: 100%;
+                        padding: .5rem;
+                    }
+                }
+                .info {
+                    @include flex(column, flex-start, space-between);
+                    height: 80%;
+                    align-items: center;
+                    gap: .6rem;
+                    h3 {
+                        @include area(100%, 100%);
+                        @include flex(row, flex-start, center);
+                        span {
+                            height: 100%;
+                            @include flex(row, center, center);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bottom-header {
+        @include flex(row, center, flex-start);
+        gap: .5rem;
+        .recent-sale {
+            background-color: $white-color;
+            height: calc(100vh - 4rem - 32vh - 1rem);
+            width: 65%;
+            padding: .5rem;
+            padding-bottom: 0;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            border-radius: .3rem;
+            display: grid;
+            grid-template-rows: 2.5rem calc(100% - 2.5rem);
+            gap: .5rem;
+            .invoice {
+                // background: $dark-bg;
+                height: 100%;
+                overflow: auto;
+                margin-bottom: .5rem;
+                @include flex(row, flex-start, flex-start);
+                table {
+                    thead {
+                        tr {
+                            th {
+                                &:nth-child(10) {
+                                    width: 9rem;
+                                }
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                &:nth-child(2) {
+                                    font-size: .9rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .top-selling {
+            background-color: $white-color;
+            height: calc(100vh - 4rem - 32vh - 1rem);
+            width: 35%;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            padding: .5rem;
+            border-top-left-radius: .3rem;
+            border-bottom-left-radius: .3rem;
+            display: grid;
+            grid-template-rows: 2.5rem calc(100% - 2.5rem);
+            gap: 1rem;
+            .nav {
+                @include area;
+                h2 {
+                    @include font(1.5rem, $font-mont, $text-color)
+                }
+            }
+            .cont {
+                height: 96%;
+                overflow-y: auto;
+                @include flex(column, flex-start, center);
+                .goods {
+                    @include area(2.5rem, 100%);
+                    @include flex(row, flex-start, center);
+                    border-bottom: 1.6px solid #A6A6A6;
+                    .product-name {
+                        width: 50%;
+                        height: 2.5rem;
+                        @include flex(row, flex-start, center);
+                    }
+                    .product-price {
+                        width: 25%;
+                        @include flex(row, flex-start, center);
+                        gap: .5rem;
+                        #icon {
+                            height: 100%;
+                            @include flex(row, center, center);
+                            font-size: 1.2rem;
+                        }
+                    }
+                    .product-qty {
+                        width: 25%;
+                        @include flex(row, flex-end, center);
+                    }
+                    transition: $transition;
+                    &:hover {
+                        background-color: whitesmoke;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

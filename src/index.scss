@@ -1,0 +1,758 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$bg-color: #FAF6FE;
+// $bg-color: #E5E5FF;
+$full-bg-color: #241445;
+$full-bg-color: $bg-color;
+$white-color: white;
+$text-color: #262626;
+$danger-color: #FF1A1A;
+$success-color: #00CC00;
+$warning-color:#F97325;
+$primary-color: #4D4DFF;
+$hover-color: #6666FF;
+$special-color:#3333FF;
+$hover-color: #8080FF;
+$table-border-color:#CCCCFF;
+$seconday-color: #A6A6A6;
+$font-mont: 'Montserrat',
+sans-serif;
+$font-manrope: 'Manrope',
+sans-serif;
+$font-pop: 'Poppins',
+sans-serif;
+$header-height: 5rem;
+$transition: all 500ms ease;
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.danger-color {
+    background-color: $danger-color;
+}
+
+.warning-color {
+    background-color: $warning-color;
+}
+
+.success-color {
+    background-color: $success-color;
+}
+
+.primary-color {
+    background-color: $primary-color;
+}
+
+@mixin area($height: 100%,
+$width: 100%) {
+    height: $height;
+    width: $width;
+}
+
+@mixin resGrid($var) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($var, 1fr));
+}
+
+@mixin flex($direction: row,
+$jContent: center,
+$aItems: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jContent;
+    align-items: $aItems;
+}
+
+@mixin autoCol($var) {
+    display: grid;
+    grid-template-columns: repeat($var, auto);
+}
+
+@mixin autoRow($var) {
+    display: grid;
+    grid-template-rows: repeat($var, auto);
+}
+
+@mixin font($size,
+$family,
+$color) {
+    font-size: $size;
+    font-family: $family;
+    color: $color;
+}
+
+#icon {
+    font-size: 1.5rem;
+}
+
+button {
+    @include font(1.1rem,
+    $font-mont,
+    $text-color);
+    font-weight: 500;
+    border: 1px solid $text-color;
+    border-radius: .3rem;
+    // padding: .75rem 1.5rem;
+    transition: $transition;
+    height: 2.9rem;
+    cursor: pointer;
+    #icon {
+        margin-right: .5rem;
+        height: 100%;
+        @include flex(row,
+        center,
+        center);
+    }
+}
+
+.clear-btn {
+    height: 2.9rem;
+    background-color: transparent;
+    @include flex(row,
+    center,
+    center);
+    &:hover {
+        background-color: $hover-color;
+        color: $white-color
+    }
+}
+
+.unClear-btn {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    &:hover {
+        background-color: transparent;
+        color: $text-color
+    }
+}
+
+small {
+    @include font(.9rem,
+    $font-mont,
+    $text-color);
+}
+
+h4 {
+    @include font(1rem,
+    $font-mont,
+    $text-color);
+    font-weight: 500;
+}
+
+h5 {
+    @include font(.9rem,
+    $font-mont,
+    $text-color);
+    font-weight: 500;
+}
+
+.table-holder {
+    height: 22.5rem;
+    width: 100%;
+    overflow-y: auto;
+    margin-bottom: .75rem;
+    @include flex(row,
+    center,
+    flex-start);
+    table {
+        height: auto;
+        max-height: 22.5rem;
+        width: 100%;
+        background-color: #A6A6A6;
+        border-collapse: separate;
+        table-layout: fixed;
+        thead {
+            tr {
+                height: 3rem;
+                background-color: $white-color;
+                th {
+                    @include font(1.1rem,
+                    $font-pop,
+                    $text-color)
+                }
+            }
+        }
+        tbody {
+            tr {
+                height: 2.5rem;
+                td {
+                    background-color: $white-color;
+                    @include font(1rem,
+                    $font-mont,
+                    $text-color);
+                    text-align: center;
+                    &:last-child {
+                        button {
+                            margin: 0 auto;
+                            height: 2rem;
+                            width: 6rem;
+                            @include flex(row,
+                            center,
+                            center);
+                        }
+                    }
+                }
+            }
+            .active-table {
+                td {
+                    background-color: whitesmoke;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.inventory-table-holder {
+    @include area(35.5rem,
+    100%);
+}
+
+.form-group {
+    @include area(4rem,
+    100%);
+    @include autoRow(2);
+    gap: .5rem;
+    label {
+        @include font(1rem,
+        $font-mont,
+        $text-color);
+        font-weight: 600;
+    }
+    input {
+        @include area(2.75rem,
+        100%);
+        @include font(1rem,
+        $font-mont,
+        $text-color);
+        padding: 0 .5rem;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: .2rem;
+        &:focus {
+            outline-color: $hover-color;
+        }
+    }
+    position: relative;
+    .filtered-stock {
+        z-index: 15;
+        position: absolute;
+        top: 4.7rem;
+        left: 0;
+        width: 100%;
+        color: $white-color;
+        height: auto;
+        @include flex(column,
+        center,
+        flex-start);
+        // border: 1px solid $text-color;
+        li {
+            padding: 0 .5rem;
+            border: 1px solid $text-color;
+            border-bottom: none;
+            @include area(2.5rem,
+            100%);
+            background-color: $white-color;
+            color: $text-color;
+            &:first-child {
+                margin: 0;
+            }
+            &:last-child {
+                border-bottom: 1px solid $text-color;
+            }
+            transition: $transition;
+            cursor: pointer;
+            &:hover {
+                color: $white-color;
+                background-color: $text-color;
+            }
+        }
+    }
+}
+
+h1 {
+    @include font(2rem,
+    $font-manrope,
+    $text-color);
+}
+
+h2 {
+    @include font(1.5rem,
+    $font-pop,
+    $text-color);
+}
+
+h3 {
+    @include font(1.2rem,
+    $font-mont,
+    $text-color);
+    font-weight: 500;
+}
+
+li {
+    @include font(1rem,
+    $font-mont,
+    $text-color);
+    @include flex(row,
+    flex-start,
+    center);
+}
+
+.container {
+    overflow: hidden;
+    @include area(100vh,
+    100vw);
+    @include flex(row,
+    center,
+    center);
+    // Signup and login page
+    .background {
+        @include area(100vh,
+        100vw);
+        position: relative;
+        .door {
+            border-top-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            position: absolute;
+            right: 0rem;
+            top: 10vh;
+            padding: .75rem;
+            @include area(auto,
+            412px);
+            background-color: $white-color;
+            @include autoRow(2);
+            gap: 1rem;
+            .top {
+                @include area(auto,
+                100%);
+                display: grid;
+                grid-template-rows: auto;
+                gap: 1rem;
+                .option {
+                    @include area(2.5rem,
+                    100%);
+                    @include flex(row,
+                    center,
+                    center);
+                    position: relative;
+                    .line {
+                        // height: 1px;
+                        width: 100%;
+                        border-top: 1px solid $seconday-color;
+                    }
+                    small {
+                        position: absolute;
+                        top: .5rem;
+                        background-color: $white-color;
+                        padding: .2rem .5rem;
+                    }
+                }
+            }
+            // End of Top Door section
+            form.access {
+                @include area(auto,
+                100%);
+                display: grid;
+                grid-template-rows: auto;
+                gap: 1.5rem;
+                .form-group {
+                    @include area(4rem,
+                    100%);
+                    @include autoRow(2);
+                    gap: .5rem;
+                    label {
+                        @include font(1.2rem,
+                        $font-mont,
+                        $text-color);
+                        font-weight: 500;
+                    }
+                }
+                .form-link {
+                    @include area(2rem,
+                    100%);
+                    @include flex(row,
+                    center,
+                    center);
+                    span {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.admin-home {
+    @include area(100vh,
+    100%);
+    display: grid;
+    grid-template-columns: 16vw 84vw;
+    // gap: .4rem;
+    aside {
+        @include area(100%,
+        100%);
+        display: grid;
+        grid-template-rows: 4rem calc(100vh - 4rem);
+        .nav {
+            padding-left: .5rem;
+            @include area;
+            background-color: $text-color;
+            @include flex(row,
+            flex-start,
+            center);
+            h2 {
+                @include font(1.5rem,
+                $font-mont,
+                $white-color);
+                #irg {
+                    font-size: 1.6rem;
+                    color: $hover-color;
+                }
+            }
+        }
+        ul {
+            padding-left: .25rem;
+            overflow-y: auto;
+            overflow-x: auto;
+            li {
+                width: 100%;
+                height: auto;
+                min-height: 2.75rem;
+                background-color: white;
+                display: grid;
+                grid-template-rows: 2.75rem auto;
+                // gap: .5rem;
+                &:first-child {
+                    margin-top: .5rem;
+                }
+                .top-list {
+                    padding-left: .5rem;
+                    @include area(2.75rem,
+                    15rem);
+                    @include flex( row,
+                    flex-start,
+                    center);
+                    cursor: pointer;
+                    gap: 1rem;
+                    span {
+                        height: 100%;
+                        @include flex( row,
+                        flex-start,
+                        center);
+                        font-size: 1.3rem;
+                    }
+                    transition: $transition;
+                    &:hover {
+                        background-color: $dark-bg;
+                        h4 {
+                            color: $white-color;
+                        }
+                        span {
+                            color: $white-color;
+                        }
+                    }
+                }
+                position :relative;
+                .hover-list {
+                    width: 17vw;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: chocolate;
+                }
+                .drop {
+                    @include area(fit-content,
+                    100%);
+                    @include flex(row,
+                    flex-end,
+                    flex-start);
+                    .aside-drop {
+                        margin-top: .5rem;
+                        @include area(fit-content,
+                        90%);
+                        @include flex(column,
+                        center,
+                        center);
+                        .aside-drop-list {
+                            @include area(2rem,
+                            100%);
+                            @include flex(row,
+                            flex-start,
+                            center);
+                            gap: .5rem;
+                            padding-left: .5rem;
+                            cursor: pointer;
+                            h4 {
+                                @include font(.9rem,
+                                $font-mont,
+                                $text-color)
+                            }
+                            #icon {
+                                height: 100%;
+                                @include flex(row,
+                                center,
+                                center);
+                                font-size: 1.3rem;
+                            }
+                            &:hover {
+                                font-size: .9rem;
+                                background-color: $dark-bg;
+                                h4,
+                                #icon {
+                                    color: $white-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .active-aside-link {
+                background-color: $text-color;
+                h4 {
+                    color: $white-color;
+                }
+                span {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+    .main-body {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: 4rem calc(100vh - 4rem);
+        // gap: .75rem;
+        nav {
+            padding-right: .5rem;
+            @include area(4rem,
+            100%);
+            background-color: black;
+            background-color: $text-color;
+            display: grid;
+            grid-template-columns: 12rem calc(100% - 12rem);
+            .left {
+                @include area(100%,
+                100%);
+                @include flex(row,
+                flex-start,
+                center);
+                color: $white-color;
+                #icon {
+                    font-size: 1.75rem;
+                    height: 100%;
+                    @include flex(row,
+                    center,
+                    center);
+                    display: none;
+                }
+                .location {
+                    z-index: 15;
+                    height: 2.75rem;
+                    @include flex(row,
+                    center,
+                    center);
+                    gap: .75rem;
+                    &:hover {
+                        color: $white-color;
+                    }
+                    .biz-location {
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 3.25rem;
+                        border: 1px solid $text-color;
+                        li {
+                            @include area(2.5rem,
+                            100%);
+                            input {
+                                display: none;
+                            }
+                            label {
+                                @include area;
+                                @include flex(row,
+                                flex-start,
+                                center);
+                                background-color: $white-color;
+                                @include font(1rem,
+                                $font-mont,
+                                $text-color);
+                                padding-left: .75rem;
+                                border-bottom: 1px solid #A6A6A6;
+                                font-weight: 400;
+                                &:last-child {
+                                    border: none;
+                                }
+                                &:hover {
+                                    background-color: $text-color;
+                                    color: $white-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .right {
+                @include area(4rem,
+                100%);
+                @include flex(row,
+                flex-end,
+                center);
+                .right-cont {
+                    @include area(100%,
+                    fit-content);
+                    @include autoCol(4);
+                    gap: 3rem;
+                    .other-link {
+                        @include area(100%,
+                        35rem);
+                        display: grid;
+                        place-items: center;
+                        grid-template-columns: repeat(4, auto);
+                        button {
+                            width: 6rem;
+                            height: 2.5rem;
+                            font-size: 1rem;
+                            margin: 0;
+                            background-color: transparent;
+                            border: none;
+                            @include flex(row,
+                            center,
+                            center);
+                            border-radius: 0;
+                            gap: .5rem;
+                            span {
+                                @include area(100%,
+                                fit-content);
+                                @include flex(row,
+                                center,
+                                center);
+                                font-size: 1.5rem;
+                            }
+                            &:hover {
+                                background-color: $hover-color;
+                                color: white;
+                            }
+                        }
+                    }
+                    .date {
+                        width: 9rem;
+                        @include flex(row,
+                        center,
+                        center);
+                        .date-info {
+                            @include area(2.75rem,
+                            100%);
+                            background-color: transparent;
+                            padding: 0 .75rem;
+                            @include autoCol(2);
+                            h4 {
+                                @include flex(row,
+                                flex-start,
+                                center);
+                                color: $white-color;
+                            }
+                            #icon {
+                                height: 100%;
+                                @include flex(row,
+                                flex-end,
+                                center);
+                                font-size: 1.2rem;
+                                color: white;
+                            }
+                            transition: $transition;
+                        }
+                    }
+                    .lighting {
+                        @include area(100%,
+                        4rem);
+                        @include flex(row,
+                        center,
+                        center);
+                        #light-icon {
+                            @include area(1.5rem,
+                            1.75rem);
+                            @include flex(row,
+                            center,
+                            center);
+                            border-top-left-radius: .2rem;
+                            border-bottom-left-radius: .2rem;
+                            font-size: 1.3rem;
+                        }
+                        #dark-icon {
+                            @include area(1.5rem,
+                            1.75rem);
+                            @include flex(row,
+                            center,
+                            center);
+                            border-top-right-radius: .2rem;
+                            border-bottom-right-radius: .2rem;
+                        }
+                        .light-mode {
+                            background-color: black;
+                            color: $hover-color;
+                        }
+                        .dark-mode {
+                            color: black;
+                            background-color: white;
+                        }
+                        cursor: pointer;
+                    }
+                    .admin {
+                        margin: auto 0;
+                        @include area(2.75rem,
+                        fit-content);
+                        @include flex(column,
+                        flex-end,
+                        center);
+                        gap: .5rem;
+                        h4 {
+                            color: $white-color;
+                        }
+                        small {
+                            color: $hover-color;
+                        }
+                    }
+                }
+            }
+        }
+        // END OF NAVIGATION
+        header,
+        head {
+            @include area(calc(100vh - 4rem),
+            100%);
+            @include flex(row,
+            center,
+            center);
+            gap: .75rem;
+            .main-header {
+                @include area(100%,
+                67.5%);
+                overflow-y: auto;
+                display: grid;
+                grid-template-rows: auto;
+                gap: 1rem;
+                .head {
+                    // background-color: $dark-bg;
+                    background-color: #00CC00;
+                    @include area;
+                    display: grid;
+                    grid-template-rows: auto;
+                    gap: 1rem;
+                    padding-bottom: .75rem;
+                }
+            }
+        }
+    }
+}

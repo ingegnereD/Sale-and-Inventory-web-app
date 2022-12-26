@@ -1,0 +1,219 @@
+@import '../../index.scss';
+.customer-page {
+    .main-body {
+        header {
+            margin-top: .5rem;
+            .form-area {
+                padding-left: .5rem;
+                height: 100%;
+                width: 35%;
+                form {
+                    @include area;
+                    @include flex(column, flex-start, center);
+                    .input-area {
+                        @include area(60%, 100%);
+                        background-color: $white-color;
+                        @include autoRow(4);
+                        gap: 2rem;
+                        .form-group {
+                            label {
+                                @include font(1.1rem, $font-mont, $text-color);
+                            }
+                            input[type="radio"] {
+                                display: none;
+                                // visibility: hidden;
+                            }
+                        }
+                        .location {
+                            height: 2.75rem;
+                            @include flex(row, center, center);
+                            gap: .75rem;
+                            &:hover {
+                                background-color: black;
+                                color: $white-color;
+                            }
+                            .biz-location {
+                                width: 100%;
+                                position: absolute;
+                                left: 0;
+                                top: 2.8rem;
+                                border: 1px solid $text-color;
+                                li {
+                                    @include area(2.5rem, 100%);
+                                    input {
+                                        display: none;
+                                    }
+                                    label {
+                                        @include area;
+                                        @include flex(row, flex-start, center);
+                                        background-color: $white-color;
+                                        @include font(1rem, $font-mont, $text-color);
+                                        padding-left: .75rem;
+                                        border-bottom: 1px solid #A6A6A6;
+                                        &:last-child {
+                                            border: none;
+                                        }
+                                        &:hover {
+                                            background-color: $text-color;
+                                            color: $white-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .event-area {
+                        @include area(40%, 100%);
+                        @include flex(row, center, flex-start);
+                        .cont {
+                            @include area(auto, 100%);
+                            margin-top: 2rem;
+                            @include resGrid(4rem);
+                            gap: .75rem;
+                            button {
+                                height: 2.75rem;
+                                max-width: 6rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .customers-area {
+                padding-right: .5rem;
+                width: 65%;
+                height: 100%;
+                display: grid;
+                grid-template-rows: 2.75rem calc(100% - 2.75rem);
+                gap: .75rem;
+                .top {
+                    @include flex(row, flex-end, center);
+                    width: 100%;
+                    gap: .75rem;
+                    .filter-group {
+                        // width: 60%;
+                        width: 32.5%;
+                        @include flex(row, flex-start, center);
+                    }
+                    .date-filter {
+                        width: 35%;
+                        height: 2.75rem;
+                        // background-color: chartreuse;
+                        h4 {
+                            @include area;
+                            @include flex(row, center, center);
+                            font-size: 1.1rem;
+                            color: $white-color;
+                        }
+                        &:hover {
+                            background-color: black;
+                        }
+                        position: relative;
+                        .option {
+                            position: absolute;
+                            top: 2.8rem;
+                            left: 0;
+                            @include area(auto, 100%);
+                            border: 1px solid #A6A6A6;
+                            li {
+                                z-index: 15;
+                                background-color: $white-color;
+                                color: $text-color;
+                                height: 2.5rem;
+                                font-weight: 400;
+                                border-bottom: 1px solid #A6A6A6;
+                                padding: 0 .75rem;
+                                transition: $transition;
+                                &:hover {
+                                    background-color: $text-color;
+                                    color: $white-color;
+                                }
+                                &:last-child {
+                                    height: 2.3rem;
+                                    @include flex(row, flex-end, center);
+                                    .apply {
+                                        height: 2rem;
+                                        width: 5rem;
+                                    }
+                                    border-bottom: none;
+                                    &:hover {
+                                        background-color: $white-color;
+                                        color: $text-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .location {
+                        @include area(100%, 32.5%);
+                        position: relative;
+                        @include flex(row, center, center);
+                        gap: .75rem;
+                        &:hover {
+                            background-color: black;
+                            color: $white-color;
+                        }
+                        ul {
+                            width: 100%;
+                            position: absolute;
+                            top: 2.8rem;
+                            right: 0;
+                            border: 1px solid #A6A6A6;
+                            li {
+                                @include area(2.5rem, 100%);
+                                input {
+                                    display: none;
+                                }
+                                label {
+                                    @include area;
+                                    @include flex(row, flex-start, center);
+                                    background-color: $white-color;
+                                    @include font(1rem, $font-mont, $text-color);
+                                    padding-left: .75rem;
+                                    border-bottom: 1px solid #A6A6A6;
+                                    &:last-child {
+                                        border: none;
+                                    }
+                                    &:hover {
+                                        background-color: $text-color;
+                                        color: $white-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                //
+                .customer-list {
+                    @include area;
+                    overflow-y: auto;
+                    height: calc(100vh - 4rem - 1rem - 2.75rem - .75rem - 1rem);
+                    margin-bottom: 3rem;
+                    tr {
+                        th {
+                            &:first-child {
+                                width: 7.5rem;
+                            }
+                            &:nth-child(3) {
+                                width: 7.5rem;
+                            }
+                            &:last-child {
+                                width: 9rem;
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            height: 2.75rem;
+                            td {
+                                button {
+                                    height: 2.1rem;
+                                    padding: 0 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

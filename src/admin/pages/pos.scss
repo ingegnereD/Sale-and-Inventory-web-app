@@ -1,0 +1,437 @@
+@import '../../index.scss';
+.pos-page {
+    grid-template-columns: 5vw 95vw;
+    aside {
+        @include area;
+        .nav {
+            h2 {
+                #ent {
+                    display: none;
+                }
+            }
+        }
+        ul {
+            margin-right: .75rem;
+            li {
+                .top-list {
+                    h4 {
+                        display: none;
+                    }
+                    padding-left: 1rem;
+                    #icon {}
+                }
+                .drop {
+                    .aside-drop {
+                        li {
+                            h4 {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main-body {
+         ::-webkit-scrollbar {
+            width: .5rem;
+            background-color: #A6A6A6;
+        }
+         ::-webkit-scrollbar-thumb {
+            background-color: $text-color;
+            cursor: pointer;
+        }
+        header {
+            .main-header {
+                // height: 100vh;
+                width: 57.5%;
+                display: grid;
+                grid-template-rows: 4rem calc(100vh - 13rem) 3rem;
+                .nav {
+                    @include area;
+                    @include flex(row, center, center);
+                    gap: 1rem;
+                    .cust-group {
+                        width: 35%;
+                        height: 2.75rem;
+                        display: grid;
+                        grid-template-columns: 2rem calc(100% - 4rem) 2rem;
+                        span {
+                            height: 100%;
+                            @include flex(row, center, center);
+                            border: 1px solid $text-color;
+                        }
+                        .title {
+                            height: 100%;
+                            text-align: center;
+                            @include flex(row, center, center);
+                            border: 1px solid $text-color;
+                            border-right: none;
+                            border-left: none;
+                            gap: 1rem;
+                            span {
+                                border: none;
+                            }
+                        }
+                        position: relative;
+                        .cust-form {
+                            position: absolute;
+                            top: 3rem;
+                            left: 0;
+                            width: 100%;
+                            background-color: $white-color;
+                            .drop-cust-list {
+                                position: relative;
+                                top: .25rem;
+                                left: 0rem;
+                                height: 7rem;
+                                overflow-y: auto;
+                                background-color: $white-color;
+                                border: 1px solid #A6A6A6;
+                                padding: 0 .5rem;
+                                h5 {
+                                    margin-top: 1rem;
+                                }
+                                li {
+                                    height: 2rem;
+                                    width: 100%;
+                                    padding: 0 .5rem;
+                                    border-bottom: 1px solid #A6A6A6;
+                                    background-color: $white-color;
+                                    color: $text-color;
+                                    &:last-child {
+                                        border: none;
+                                    }
+                                    &:hover {
+                                        background-color: $text-color;
+                                        color: $white-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .product-group {
+                        width: 65%;
+                        height: 100%;
+                        @include flex(row, center, center);
+                        form {
+                            width: 100%;
+                            position: relative;
+                            display: grid;
+                            grid-template-columns: 2rem calc(100% - 4rem) 2rem;
+                            span {
+                                height: 100%;
+                                @include flex(row, center, center);
+                                border: 1px solid $text-color;
+                            }
+                            input {
+                                border-right: none;
+                                border-left: none;
+                                outline: none;
+                                border-radius: 0;
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+                            .filtered-stock {
+                                width: 100%;
+                                position: absolute;
+                                top: 3rem;
+                                border: 1px solid $text-color;
+                                li {
+                                    cursor: pointer;
+                                    width: 100%;
+                                    height: 2.5rem;
+                                    background-color: $white-color;
+                                    color: $text-color;
+                                    // border-bottom: 1px solid #A6A6A6;
+                                    &:last-child {
+                                        border-bottom: none;
+                                    }
+                                    &:hover {
+                                        background-color: $text-color;
+                                        color: $white-color;
+                                    }
+                                    @include flex(row, flex-start, center);
+                                    padding-left: .75rem;
+                                    .name {
+                                        width: 40%;
+                                        border: none;
+                                        @include flex(row, flex-start, center);
+                                    }
+                                    .quantity {
+                                        width: 30%;
+                                        border: none;
+                                    }
+                                    .price {
+                                        width: 30%;
+                                        @include flex(row, flex-start, center);
+                                        gap: .25rem;
+                                        border: none;
+                                        #sug-icon {
+                                            @include area(100%, fit-content);
+                                            @include flex(row, center, center);
+                                            border: none;
+                                            font-size: 1.55rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .list-sell {
+                    @include area;
+                    display: grid;
+                    grid-template-rows: 2.5rem calc(100% - 5rem) 2.5rem;
+                    gap: .5rem;
+                    .sell-list-heading {
+                        @include area(100%, calc(100% - .5rem));
+                        @include flex(row, flex-start, center);
+                        span {
+                            @include font(1.1rem, $font-pop, $text-color);
+                            @include flex(row, center, center);
+                            font-weight: bold;
+                        }
+                        .product {
+                            width: 27%;
+                            justify-content: flex-start;
+                        }
+                        .qty {
+                            width: 23%;
+                        }
+                        .unit-price {
+                            width: 20%;
+                        }
+                        .tot-price {
+                            width: 20%;
+                        }
+                        .action {
+                            width: 10;
+                        }
+                    }
+                    .selling-list {
+                        @include area;
+                        min-height: fit-content;
+                        display: flex;
+                        flex-direction: column;
+                        overflow-y: auto;
+                        gap: .75rem;
+                        .list {
+                            margin-right: .5rem;
+                            border: 1px solid #A6A6A6;
+                            background-color: whitesmoke;
+                            background-color: $white-color;
+                            height: 2.5rem;
+                            @include flex(row, flex-start, center);
+                            .product-name {
+                                width: 30%;
+                                padding-left: .75rem;
+                                @include font(1.1rem, $font-mont, $text-color);
+                                font-weight: 500;
+                            }
+                            article {
+                                width: 25%;
+                                height: 100%;
+                                @include flex(row, center, center);
+                                margin: auto 0;
+                                span {
+                                    margin: auto 0;
+                                    @include area(2.5rem, 3rem);
+                                    @include flex(row, center, center);
+                                    border-radius: 0;
+                                    @include font(1.1rem, $font-mont, $white-color);
+                                    font-weight: 500;
+                                    background-color: transparent;
+                                    color: $text-color;
+                                    border-color: #A6A6A6;
+                                    border-top: none;
+                                    border-bottom: none;
+                                    &:hover {
+                                        background-color: $text-color;
+                                        color: $white-color;
+                                    }
+                                }
+                                input {
+                                    width: 4rem;
+                                    height: calc(2.5rem - 2px);
+                                    @include flex(row, center, center);
+                                    text-align: center;
+                                    outline: none;
+                                    border: none;
+                                    @include font(1.1rem, $font-mont, $text-color);
+                                    font-weight: 500;
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+                            }
+                            .unit-price {
+                                width: 17.5%;
+                                @include flex(row, center, center);
+                                @include font(1rem, $font-mont, $text-color);
+                                font-weight: 500;
+                                #icon {
+                                    height: 100%;
+                                    display: grid;
+                                    place-items: center;
+                                }
+                            }
+                            .tot-price {
+                                @include flex(row, center, center);
+                                width: 27.5%;
+                                @include font(1rem, $font-mont, $text-color);
+                                font-weight: 500;
+                                #icon {
+                                    height: 100%;
+                                    display: grid;
+                                    place-items: center;
+                                }
+                            }
+                            .remove {
+                                @include flex(row, center, center);
+                                width: 10%;
+                                @include font(1rem, $font-mont, $text-color);
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                    .total-sold {
+                        @include area(90%, 100%);
+                        @include autoCol(2);
+                        border: 1px solid #A6A6A6;
+                        background-color: whitesmoke;
+                        .name {
+                            @include flex(row, center, center);
+                            @include font(1.2rem, $font-manrope, $text-color);
+                            border-right: 1px solid #a6a6a6;
+                            font-weight: 600;
+                        }
+                        .amount {
+                            @include flex(row, center, center);
+                            @include font(1.2rem, $font-manrope, $text-color);
+                            font-weight: 600;
+                            #icon {
+                                height: 100%;
+                                display: grid;
+                                place-items: center;
+                            }
+                        }
+                    }
+                }
+                .payments {
+                    @include area;
+                    @include autoRow(2);
+                    gap: .2rem;
+                    .methods {
+                        @include autoCol(6);
+                        gap: .75rem;
+                        button {
+                            font-size: .95rem;
+                            height: 2.4rem;
+                            border: none;
+                            color: white;
+                        }
+                        .payable {
+                            @include font(1rem, $font-mont, $text-color);
+                            @include flex(row, center, center);
+                            span {
+                                height: 100%;
+                                @include flex(row, center, center);
+                            }
+                        }
+                    }
+                }
+            }
+            .right-header {
+                // background-color: pink;
+                width: 42.5%;
+                display: grid;
+                grid-template-rows: 4rem calc(100vh - 13rem) 3rem;
+                .nav {
+                    @include flex(row, flex-start, center);
+                    .filter {
+                        @include area(2.8rem, 12.2rem);
+                        padding: 0 .75rem;
+                        margin-left: .5rem;
+                        @include flex(row, flex-start, center);
+                        background-color: $text-color;
+                        gap: 3rem;
+                        border-radius: .2rem;
+                        h4 {
+                            width: 90%;
+                            @include flex(row, flex-start, center);
+                            color: $white-color;
+                        }
+                        span {
+                            @include area;
+                            width: 10%;
+                            @include flex(row, flex-end, center);
+                            height: 100%;
+                            color: $white-color;
+                        }
+                    }
+                }
+                .product-img-area {
+                    @include area;
+                    overflow-y: auto;
+                    @include resGrid(10rem);
+                    gap: .5rem;
+                    padding-right: .5rem;
+                    padding-left: .5rem;
+                    .cont {
+                        @include flex(row, center, flex-end);
+                        height: 9rem;
+                        background-color: $text-color;
+                        border-radius: .17rem;
+                        border-top-right-radius: .2rem;
+                        border-top-left-radius: .2rem;
+                        // box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+                        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+                        .product-card {
+                            border-radius: .15rem;
+                            border-top-right-radius: .1rem;
+                            border-top-left-radius: .1rem;
+                            @include flex(column, center, center);
+                            height: 96.5%;
+                            width: 100%;
+                            background-color: $white-color;
+                            .img {
+                                height: 65%;
+                            }
+                            .info {
+                                height: 35%;
+                                width: 100%;
+                                @include autoRow(2);
+                                .product-name {
+                                    width: 100%;
+                                    text-align: center;
+                                }
+                                .numbers {
+                                    text-align: center;
+                                    @include autoCol(2);
+                                    h5 {
+                                        @include flex(row, center, center);
+                                        span {
+                                            height: 100%;
+                                            display: grid;
+                                            place-items: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .bottom {
+                    padding-right: .5rem;
+                    @include flex(row, flex-end, center);
+                    button {
+                        height: 2.4rem;
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
